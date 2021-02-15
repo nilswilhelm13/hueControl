@@ -13,7 +13,6 @@ var db *bolt.DB
 var scheduler *cron.Cron
 
 func main() {
-
 	db = openDb()
 
 	// initialize http client

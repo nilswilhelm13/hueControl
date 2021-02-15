@@ -12,11 +12,10 @@ func fadeIn(settings Task) {
 
 		lightParameters := settings.LightParameters
 
-		payload := Payload{
-			On:  true,
-			Sat: lightParameters.SatStart + updateValue(lightParameters.SatStart, lightParameters.SatEnd, i),
-			Bri: lightParameters.BriStart + updateValue(lightParameters.BriStart, lightParameters.BriEnd, i),
-			Hue: lightParameters.HueStart + updateValue(lightParameters.HueStart, lightParameters.HueEnd, i),
+		payload := AmbientPayload{
+			On:        true,
+			Bri:       lightParameters.BriStart + updateValue(lightParameters.BriStart, lightParameters.BriEnd, i),
+			ColorTemp: lightParameters.ColorTempStart + updateValue(lightParameters.ColorTempStart, lightParameters.ColorTempEnd, i),
 		}
 		log.Println(payload)
 		doRequest(payload)

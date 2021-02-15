@@ -20,7 +20,7 @@ type Task struct {
 	// TimerDuration as duration for fading
 	TimerDuration int `json:"timer_duration"`
 	// LightParameters
-	LightParameters LightParameters `json:"light_parameters"`
+	LightParameters AmbientLightParameters `json:"light_parameters"`
 	// Days of week for task
 	Days []time.Weekday `json:"days"`
 	// Hours
